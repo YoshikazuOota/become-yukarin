@@ -149,7 +149,7 @@ def generate_mean_var(path_directory: Path):
     spectrogram_list = []
     aperiodicity_list = []
     mfcc_list = []
-    for path in path_directory.glob('*'):
+    for path in path_directory.glob('*.npy'):
         feature = acoustic_feature_load_process(path)
         f0_list.append(feature.f0[feature.voiced])  # remove unvoiced
         spectrogram_list.append(feature.spectrogram)
@@ -188,8 +188,8 @@ def generate_mean_var(path_directory: Path):
 
 
 def main():
-    paths1 = list(sorted(arguments.input1_directory.glob('*')))
-    paths2 = list(sorted(arguments.input2_directory.glob('*')))
+    paths1 = list(sorted(arguments.input1_directory.glob('*.wav')))
+    paths2 = list(sorted(arguments.input2_directory.glob('*.wav')))
     assert len(paths1) == len(paths2)
 
     arguments.output1_directory.mkdir(exist_ok=True)

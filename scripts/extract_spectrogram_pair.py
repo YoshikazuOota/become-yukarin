@@ -74,7 +74,7 @@ def generate_file(path):
 
 
 def main():
-    paths = list(sorted(arguments.input_directory.glob('*')))
+    paths = list(sorted(arguments.input_directory.glob('*.wav')))
     arguments.output_directory.mkdir(exist_ok=True)
 
     pool = multiprocessing.Pool()
