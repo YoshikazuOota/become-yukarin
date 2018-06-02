@@ -2,7 +2,7 @@ from typing import NamedTuple
 
 
 class VoiceParam(NamedTuple):
-    sample_rate: int = 24000
+    sample_rate: int = 22050
     top_db: float = None
     pad_second: float = 0.0
 
