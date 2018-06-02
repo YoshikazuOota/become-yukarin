@@ -7,3 +7,4 @@ https://github.com/Hiroshiba/become-yukarin のオリジナル Readme.txt は re
 ・scripts/super_resolution_test.py で -it オプションが使えるようにする
 
 ＊解説記事のURL
+https://qiita.com/atticatticattic/items/f1e4c671d73d815bbad2
