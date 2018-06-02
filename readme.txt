@@ -8,3 +8,7 @@ https://github.com/Hiroshiba/become-yukarin のオリジナル Readme.txt は re
 
 ＊解説記事のURL
 https://qiita.com/atticatticattic/items/f1e4c671d73d815bbad2
+
+
+Copyright (c) 2018 Yoshikazu Ohta
+Released under the MIT license
