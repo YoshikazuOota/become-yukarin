@@ -8,7 +8,7 @@
     "input_global_noise": 0.01,
     "input_local_noise": 0.01,
     "input_mean_path": "dat/out_1st_my_npy/mean.npy",
-    "input_var_path": "dat/out_1st_my_npyvar.npy",
+    "input_var_path": "dat/out_1st_my_npy/var.npy",
     "num_test": 1,
     "seed": 0,
     "target_glob": "dat/out_1st_yukari_npy/v_*.npy",
