@@ -2,8 +2,8 @@
 
 # 実行時に指定された引数の数、つまり変数 $# の値が 3 でなければエラー終了。
 if [ $# -ne 1 ]; then
-  echo "実行するには2個の引数が必要です。"
-  echo "./check_sample.sh dat/in_1st_my_wav check.txt "
+  echo "ディレクトリを指定してください"
+  echo "./check_sample.sh dat/in_1st_my_wav"
   exit 1
 fi
 
