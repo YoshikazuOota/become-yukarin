@@ -9,6 +9,9 @@ https://github.com/Hiroshiba/become-yukarin のオリジナル Readme.txt は re
 ＊解説記事のURL
 https://qiita.com/atticatticattic/items/f1e4c671d73d815bbad2
 
+2019/3/5
+dat/in_1st_my_wav_sample に私の入力音声のサンプル追加
+
 
 Copyright (c) 2018 Yoshikazu Ohta
 Released under the MIT license
