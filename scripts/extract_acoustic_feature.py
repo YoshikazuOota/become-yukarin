@@ -90,49 +90,53 @@ def plot_acoustic_feature(wave1, wave2, f1, f2, rate, write_path1):
 
     plot.figure(figsize=(26, 13))
     plot.subplot(4,3,1)
-    plot.title('origin')
+    plot.title('speaker voice')
     librosa.display.waveplot(row_wave1, sr=rate)
+    plot.xlabel('')
 
     plot.subplot(4,3,2)
     plot.title('f0')
-    librosa.display.waveplot(f1_f0, sr=rate)
+    librosa.display.waveplot(f1_f0, sr=1, x_axis='none')
 
     plot.subplot(4,3,3)
     plot.title('aperiodicity')
-    librosa.display.waveplot(f1_aperiodicity, sr=rate)
+    librosa.display.waveplot(f1_aperiodicity, sr=1, x_axis='none')
 
     plot.subplot(4,3,4)
-    plot.title('voiced')
-    librosa.display.waveplot(f1_voiced, sr=rate)
+    plot.title('voiced flag')
+    librosa.display.waveplot(f1_voiced, sr=1, x_axis='none')
 
     plot.subplot(4,3,5)
-    plot.title('spectrogram')
-    librosa.display.waveplot(f1_spectrogram, sr=rate)
+    plot.title('spectral envelope')
+    librosa.display.waveplot(f1_spectrogram, sr=1, x_axis='none')
 
     plot.subplot(4,3,6)
+    plot.title('spectrum')
     plot.specgram(row_wave1,Fs = rate)
 
     plot.subplot(4,3,7)
-    plot.title('origin')
+    plot.title('target voice')
     librosa.display.waveplot(row_wave2, sr=rate)
+    plot.xlabel('')
 
     plot.subplot(4,3,8)
     plot.title('f0')
-    librosa.display.waveplot(f2_f0, sr=rate)
+    librosa.display.waveplot(f2_f0, sr=1, x_axis='none')
 
     plot.subplot(4,3,9)
     plot.title('aperiodicity')
-    librosa.display.waveplot(f2_aperiodicity, sr=rate)
+    librosa.display.waveplot(f2_aperiodicity, sr=1, x_axis='none')
 
     plot.subplot(4,3,10)
-    plot.title('voiced')
-    librosa.display.waveplot(f2_voiced, sr=rate)
+    plot.title('voiced flag')
+    librosa.display.waveplot(f2_voiced, sr=1, x_axis='none')
 
     plot.subplot(4,3,11)
-    plot.title('spectrogram')
-    librosa.display.waveplot(f2_spectrogram, sr=rate)
+    plot.title('spectral envelope')
+    librosa.display.waveplot(f2_spectrogram, sr=1, x_axis='none')
 
     plot.subplot(4,3,12)
+    plot.title('spectrum')
     plot.specgram(row_wave2,Fs = rate)
 
     plot.savefig(str(write_path1))
@@ -261,7 +265,9 @@ def generate_feature(path1, path2):
 
         out_p1 = Path(str(arguments.output1_directory) + "_ajst_plot", path1.stem)
         plot_acoustic_feature(wave1, wave2, f1, f2, arguments.sample_rate, out_p1)
-        #  plot_acoustic_feature_for_check(wave1, wave2, f1, f2, arguments.sample_rate, out_p1)
+
+        librosa.output.write_wav(str(out_p1) + '_my.wav', wave1, arguments.sample_rate, norm=True)
+        librosa.output.write_wav(str(out_p1) + '_yuka.wav', wave2, arguments.sample_rate, norm=True)
 
     # save
     acoustic_feature_save_process = AcousticFeatureSaveProcess(validate=True, ignore=arguments.ignore_feature)
